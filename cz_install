@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Initial setup script for termux
+
+termux-change-repo                                                # Used so it doesn't have to search every single repo, just select a repo when it pops up
+termux-setup-storage                                              # Makes the internal storage accessible 
+
+apt update -y && apt upgrade -y                                   # Updates the system
+
+pkg install root-repo nvim openssh neofetch git python-pip -y     # Installs system utilities
+pkg install golang python ruby mono rust lua kotlin openjdk-17 -y # Installs programming languages
+pkg install x11-repo -y                                           # Installs X-11 for Termux [The app to view the desktop should have already been installed via the previous script]
+
+# From here we would grab the .config files that are wanted/needed, however i currently do not have them setup so it will just end here for now.
